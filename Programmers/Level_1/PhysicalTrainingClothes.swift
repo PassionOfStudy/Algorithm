@@ -24,7 +24,10 @@ func lendReserveCloth(_ stolenClothStudents: [Bool], _ reserve: [Int]) -> [Bool]
     for item in reserve {
         for (index, check) in stolenClothStudents.enumerated() {
             if check == false {
-                if index-1 == item-1 || index+1 == item-1 {
+                if index == item-1 {
+                    result[index] = true
+                    break
+                } else if index-1 == item-1 || index+1 == item-1 {
                     result[index] = true
                     break
                 }
